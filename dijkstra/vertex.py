@@ -13,6 +13,8 @@ class Vertex:
 		
 	'''
 		create a priority queue/ heap to manage vertex progressions
+		use a dictionary to keep track of vertices
+		
 		
 		key = id aka node
 		adjacent = neighbors
