@@ -1,5 +1,12 @@
 import sys
 
+graph = {'A': ['B', 'C'],
+         'B': ['C', 'D'],
+         'C': ['D'],
+         'D': ['C'],
+         'E': ['F'],
+         'F': ['C']}
+
 class Vertex:
 	def __init__(self, node):
 		self.id = node
