@@ -2,7 +2,7 @@ from collections import namedtuple, deque
 from pprint import pprint as pp
 
 inf = float('inf')
-Edge = namedtuple('tinyEWD.txt', 'start, end, cost')
+Edge = namedtuple('tinyEWD.txt', 'start end cost')
 
 
 class Graph:
@@ -50,8 +50,9 @@ class Graph:
 		return s
 
 com = ','
-graph = Graph(open('tinyEWD.txt',mode='r',))
-#graph = [int(e) if e.isdigit() else e for e in Graph.split(',')]
+graph = Graph(open('tinyEWD.txt', mode='r'))
+# graph = [int(e) if e.isdigit() else e for e in Graph.split(',')]
+
 '''
 Graph([("a", "b", 7),
                 ("a", "c", 9),
@@ -63,4 +64,5 @@ Graph([("a", "b", 7),
                 ("d", "e", 6),
                 ("e", "f", 9)])
 '''
+
 pp(graph.dijkstra("10", "608"))
