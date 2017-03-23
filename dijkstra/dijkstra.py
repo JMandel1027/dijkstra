@@ -2,7 +2,8 @@ from collections import namedtuple, deque
 from pprint import pprint as pp
 
 inf = float('inf')
-Edge = namedtuple('tinyEWD.txt', 'start end cost')
+test = open('tinyEWD.txt', mode='r')
+Edge = namedtuple(test, 'start end cost')
 
 
 class Graph:
@@ -23,10 +24,11 @@ class Graph:
 		dist[source] = 0
 		queue = self.vertices.copy()
 		neighbours = {vertex: set() for vertex in self.vertices}
+		
 		for start, end, cost in self.edges:
 			# go through graph and check edges start, end and cost
 			neighbours[start].add((end, cost))
-		# pp(neighbours)
+			# pp(neighbours)
 		
 		while queue:
 			# unreached queue set to vertex distances
@@ -50,7 +52,8 @@ class Graph:
 		return s
 
 com = ','
-graph = Graph(open('tinyEWD.txt', mode='r'))
+graph = Graph
+# graph = Graph(open('tinyEWD.txt', mode='r'))
 # graph = [int(e) if e.isdigit() else e for e in Graph.split(',')]
 
 '''
