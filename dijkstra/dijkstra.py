@@ -2,7 +2,7 @@ from collections import namedtuple, deque
 from pprint import pprint as pp
 
 inf = float('inf')
-Edge = namedtuple('Edge', 'start, end, cost')
+Edge = namedtuple('Edge', 'start end cost')
 
 
 class Graph:
@@ -21,18 +21,18 @@ class Graph:
 		# previous vertex in vertices set
 		previous = {vertex: None for vertex in self.vertices}
 		dist[source] = 0
-		q = self.vertices.copy()
+		queue = self.vertices.copy()
 		neighbours = {vertex: set() for vertex in self.vertices}
 		for start, end, cost in self.edges:
 			# go through graph and check edges start, end and cost
 			neighbours[start].add((end, cost))
 		# pp(neighbours)
 		
-		while q:
+		while queue:
 			# unreached queue set to vertex distances
 			
-			u = min(q, key=lambda vertex: dist[vertex])
-			q.remove(u)
+			u = min(queue, key=lambda vertex: dist[vertex])
+			queue.remove(u)
 			# if graph traversed then break
 			if dist[u] == inf or u == dest:
 				break
@@ -49,8 +49,11 @@ class Graph:
 		s.appendleft(u)
 		return s
 
-
-graph = Graph([("a", "b", 7),
+com = ','
+graph = Graph(open('tinyEWD.txt',mode='r',))
+#graph = [int(e) if e.isdigit() else e for e in Graph.split(',')]
+'''
+Graph([("a", "b", 7),
                 ("a", "c", 9),
                 ("a", "f", 14),
                 ("b", "c", 10),
@@ -59,5 +62,5 @@ graph = Graph([("a", "b", 7),
                 ("c", "f", 2),
                 ("d", "e", 6),
                 ("e", "f", 9)])
-
-pp(graph.dijkstra("a", "e"))
+'''
+pp(graph.dijkstra("10", "608"))
