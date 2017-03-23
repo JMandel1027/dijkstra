@@ -2,7 +2,7 @@ from collections import namedtuple, deque
 from pprint import pprint as pp
 
 inf = float('inf')
-Edge = namedtuple('Edge', 'start end cost')
+Edge = namedtuple('tinyEWD.txt', 'start, end, cost')
 
 
 class Graph:
