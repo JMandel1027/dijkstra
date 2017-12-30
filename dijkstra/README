@@ -1,6 +1,0 @@
-TODOS:
-
-1. Add test graphs
-2. optimize with a priority queue
-3. break down further so graph can be remodeled flexibly
-4. look into visualizing with networkx OR ipython + D3
